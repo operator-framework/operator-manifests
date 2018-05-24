@@ -1,0 +1,12 @@
+#! validate-crd: ../../deploy/chart/templates/05-catalogsource.crd.yaml
+#! parse-kind: CatalogSource
+apiVersion: app.coreos.com/v1alpha1
+kind: CatalogSource-v1
+metadata:
+  name: operator-manifests
+spec:
+  name: operator-manifests
+  sourceType: internal
+  configMap: operator-manifests
+  displayName: Operator Manifests
+  publisher: Operator Framework

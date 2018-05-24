@@ -1,0 +1,36 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: operator-manifests
+{{ $root := . }}
+data:
+  customResourceDefinitions: |-
+{{- range $path, $bytes := .CustomResourceDefinitions }}
+  {{- range $index, $line  := $root.Lines $bytes }}
+    {{- if eq $index 0 }}
+    {{ $line | printf "%s%s" "- " }}
+    {{- else }}
+      {{ $line }}
+    {{- end }}
+  {{- end }}
+{{- end }}
+  clusterServiceVersions: |-
+{{- range $path, $bytes := .ClusterServiceVersions }}
+  {{- range $index, $line  := $root.Lines $bytes }}
+    {{- if eq $index 0 }}
+    {{ $line | printf "%s%s" "- " }}
+    {{- else }}
+      {{ $line }}
+    {{- end }}
+  {{- end }}
+{{- end }}
+  packages: |-
+{{- range $path, $bytes := .Packages }}
+  {{- range $index, $line  := $root.Lines $bytes }}
+    {{- if eq $index 0 }}
+    {{ $line | printf "%s%s" "- " }}
+    {{- else }}
+      {{ $line }}
+    {{- end }}
+  {{- end }}
+{{- end }}
