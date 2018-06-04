@@ -1,4 +1,4 @@
-#! package-manifest: ../../catalog_resources/prometheusoperator.0.15.0.clusterserviceversion.yaml
+#! package-manifest: ./manifests/prometheus-operator/prometheusoperator.0.15.0.clusterserviceversion.yaml
 packageName: prometheus
 channels:
 - name: alpha
