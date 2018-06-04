@@ -1,3 +1,11 @@
+FROM golang:1.10 as tester
+LABEL tester=true
+WORKDIR /go/src/github.com/operator-framework/operator-manifests
+COPY . .
+RUN go test ./cmd/catalogbuilder
+RUN go get github.com/operator-framework/operator-lifecycle-manager/cmd/validator
+RUN validator ./manifests
+
 FROM golang:1.10 as builder
 LABEL builder=true
 WORKDIR /go/src/github.com/operator-framework/operator-manifests
