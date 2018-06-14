@@ -1,0 +1,7 @@
+sudo: required
+language: go
+services:
+  - docker
+script:
+  - docker build -t quay.io/operatorframework/operator-manifests:$(git rev-parse --short HEAD) .
+  - docker run quay.io/operatorframework/operator-manifests:$(git rev-parse --short HEAD)
