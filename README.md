@@ -1,4 +1,5 @@
 [![Docker Repository on Quay](https://quay.io/repository/operatorframework/operator-manifests/status?token=ac6092db-69a1-4355-a982-555194dd2a88 "Docker Repository on Quay")](https://quay.io/repository/operatorframework/operator-manifests)
+[![Build Status](https://travis-ci.com/operator-framework/operator-manifests.svg?branch=master)](https://travis-ci.com/operator-framework/operator-manifests)
 
 This project is a component of the [Operator Framework](https://github.com/operator-framework), an open source toolkit to manage Kubernetes native applications, called Operators, in an effective, automated, and scalable way. Read more in the [introduction blog post](https://coreos.com/blog/introducing-operator-framework).
 
