@@ -170,14 +170,24 @@ spec:
         path: visualization.kibanaStatus.pods
         x-descriptors:
         - 'urn:alm:descriptor:com.tectonic.ui:podStatuses'
-      - description: The status for each of the Elasticsearch pods for the Log Storage component
-        displayName: Elasticsearch Pod Status
-        path: logStore.elasticsearchStatus.pods
+      - description: The status for each of the Elasticsearch Client pods for the Log Storage component
+        displayName: Elasticsearch Client Pod Status
+        path: logStore.elasticsearchStatus.pods.client
         x-descriptors:
         - 'urn:alm:descriptor:com.tectonic.ui:podStatuses'
-#      - description: The cluster status for each of the Elasticsearch Clusters for the Log Storage component
-#        displayName: Elasticsearch Cluster status
-#        path: logstore.elasticsearchStatus.status
+      - description: The status for each of the Elasticsearch Data pods for the Log Storage component
+        displayName: Elasticsearch Data Pod Status
+        path: logStore.elasticsearchStatus.pods.data
+        x-descriptors:
+        - 'urn:alm:descriptor:com.tectonic.ui:podStatuses'
+      - description: The status for each of the Elasticsearch Master pods for the Log Storage component
+        displayName: Elasticsearch Master Pod Status
+        path: logStore.elasticsearchStatus.pods.master
+        x-descriptors:
+        - 'urn:alm:descriptor:com.tectonic.ui:podStatuses'
+      - description: The cluster status for each of the Elasticsearch Clusters for the Log Storage component
+        displayName: Elasticsearch Cluster Health
+        path: logstore.elasticsearchStatus.clusterHealth
       - description: The status for each of the Fluentd pods for the Log Collection component
         displayName: Fluentd status
         path: collection.logCollectioon.fluentdStatus.pods

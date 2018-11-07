@@ -117,20 +117,32 @@ spec:
         version: v1
       - kind: Route
         version: v1
-      specDescriptors:
-      - description: The desired number of Elasticsearch nodes for the given roles
-        displayName: Elasticsearch Node Size
-        path: nodes.replicas
-        x-descriptors:
-        - 'urn:alm:descriptor:com.tectonic.ui:podCount'
-      - description: The node selector to use for the Elasticsearch node for the given roles
-        displayName: Elasticsearch NodeSelector
-        path: nodes.nodeSelector
-        - 'urn:alm:descriptor:com.tectonic.ui:nodeSelector'
+      #specDescriptors:
+      # FIXME: This doesn't work well as is -- there are multiple nodes that can be defined currently
+      #   for the elasticsearch topology. Because of that this approach doesn't work in its current state.
+      #- description: The desired number of Elasticsearch nodes for the given roles
+      #  displayName: Elasticsearch Node Size
+      #  path: nodes.replicas
+      #  x-descriptors:
+      #  - 'urn:alm:descriptor:com.tectonic.ui:podCount'
+      #- description: The node selector to use for the Elasticsearch node for the given roles
+      #  displayName: Elasticsearch NodeSelector
+      #  path: nodes.nodeSelector
+      #  - 'urn:alm:descriptor:com.tectonic.ui:nodeSelector'
       statusDescriptors:
-      - description: The status for each of the Elasticsearch pods for the cluster
-        displayName: Elasticsearch Status
-        path: nodes.podName
+      - description: The status for each Elasticsearch Client node pod for the cluster
+        displayName: Elasticsearch Client Status
+        path: pods.client
+        x-descriptors:
+        - 'urn:alm:descriptor:com.tectonic.ui:podStatuses'
+      - description: The status for each Elasticsearch Data node pod for the cluster
+        displayName: Elasticsearch Data Status
+        path: pods.data
+        x-descriptors:
+        - 'urn:alm:descriptor:com.tectonic.ui:podStatuses'
+      - description: The status for each Elasticsearch Master node pod for the cluster
+        displayName: Elasticsearch Master Status
+        path: pods.master
         x-descriptors:
         - 'urn:alm:descriptor:com.tectonic.ui:podStatuses'
     required:
