@@ -3,8 +3,8 @@ WORKDIR /go/src/github.com/operator-framework/operator-manifests
 COPY . .
 RUN go test ./cmd/catalogbuilder
 RUN go get github.com/operator-framework/operator-lifecycle-manager/cmd/validator
-RUN wget -P ./deploy/chart/templates https://raw.githubusercontent.com/operator-framework/operator-lifecycle-manager/master/deploy/chart/templates/05-catalogsource.crd.yaml
-RUN wget -P ./deploy/chart/templates https://raw.githubusercontent.com/operator-framework/operator-lifecycle-manager/master/deploy/chart/templates/03-clusterserviceversion.crd.yaml
+RUN wget -P ./deploy/chart/templates https://raw.githubusercontent.com/operator-framework/operator-lifecycle-manager/master/deploy/chart/templates/0000_30_05-catalogsource.crd.yaml
+RUN wget -P ./deploy/chart/templates https://raw.githubusercontent.com/operator-framework/operator-lifecycle-manager/master/deploy/chart/templates/0000_30_02-clusterserviceversion.crd.yaml
 RUN validator ./manifests
 
 FROM golang:1.10 as builder
