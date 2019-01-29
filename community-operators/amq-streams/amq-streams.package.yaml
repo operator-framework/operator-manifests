@@ -1,0 +1,4 @@
+packageName: amq-streams
+channels:
+- name: preview
+  currentCSV: amqstreams.v1.0.0.beta
