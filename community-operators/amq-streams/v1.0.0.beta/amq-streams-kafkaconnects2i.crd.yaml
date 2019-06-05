@@ -6,7 +6,7 @@ metadata:
     app: strimzi
 spec:
   group: kafka.strimzi.io
-  version: v1alpha1
+  version: 1.0.0
   scope: Namespaced
   names:
     kind: KafkaConnectS2I
