@@ -33,4 +33,4 @@ Run the following to create a new catalog source in your cluster containing all 
 2. Run `docker run -it quay.io/operatorframework/operator-manifests > ./out`
 3. Run `kubectl create -f ./out`
 
-You can now create install plans and subscriptions for the Operator packages, and OLM will take care of creating CRDs and updates. See the [OLM catalog Operator docs](https://github.com/operator-framework/operator-lifecycle-manager/blob/master/Documentation/design/architecture.md#catalog-operator) for more information.
+You can now create install plans and subscriptions for the Operator packages, and OLM will take care of creating CRDs and updates. See the [OLM catalog Operator docs](https://github.com/operator-framework/operator-lifecycle-manager/blob/master/doc/design/architecture.md#catalog-operator) for more information.
